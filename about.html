@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Guitar-Effects</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="about/about.css" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<script type="text/javascript" src="about/img5.js"></script>
+</head>
+<body onload="load()" onresize="draw_gall()">
+<img id="logo" src="about/logo.png"/>
+<div id="p1">
+<h1 id="title">Guitar Effects</h1>
+</div>
+<div id="p2">
+<table>
+<tr>
+<td id="pedal-top"><div id="pedal">
+<div id="control1"><dial start="255" min="0" max="255"></dial><label>TONE</label></div>
+<div id="control2"><dial start="68" min="0" max="255"></dial><label>LEVEL</label></div>
+<div id="control3"><dial start="17" min="0" max="255"></dial><label>DRIVE</label></div>
+<name id="pedal_name">Distortion</name>
+</div></td>
+<td>
+<p><b>¿Que es Guitar-Effects?</b> GE(Guitar-Effects) es uno de los primeros amplificadores y pedaleras (online y offline) virtuales disponible para Firefox OS, 
+Android y navegadores modernos escrito completamente en HTML5.</p>
+<p><b>¿Tengo que pagar algo?</b> ¡NO! GE es completamente gratuito.</p>
+<p><b>¿Que es lo que necesito para usar mi guitarra o bajo con GE?</b> Solo necesitas un adaptador para usar GE en tu PC, o un cable con adaptador para usarlo 
+con tu telefono o tablet, ambos son muy faciles de conseguir y baratos. Para saber mas puedes leer <a href="help.html">esto</a>.</p>
+<button onclick="location='about.html#p4'">¡Pruebalo ahora!</button>
+</td>
+</tr>
+</table>
+</div>
+<div id="p3">
+<h2>Galeria</h2>
+<div id="gall" ondragstart="return false">
+<img src="about/cap1-small.jpg"/>
+<img src="about/cap2-small.jpg"/>
+<img src="about/cap3-small.jpg"/>
+<img src="about/cap4-small.jpg"/>
+<img src="about/cap5-small.jpg"/>
+</div>
+</div>
+<div id="p4">
+<h2 style="color:black">Empieza a usar Guitar-Effects!</h2>
+<p style="text-align:center"><b>¿En donde deseas usarlo?</b></p>
+<table id="apps"><tr>
+<td class="app"><img src="about/online.png"/><p>Online</p><button onclick="location='index.html'">Acceder</button></td>
+<td class="app"><img src="about/android.png"/><p>Android 4.1+</p><button onclick="location='https://play.google.com/store/apps/details?id=com.xtraid.guitareffects'">Instalar</button></td>
+<td class="app"><img src="about/firefox.png"/><p>Firefox 25+</p><p>Firefox para Android 26+</p><p>Firefox OS 1.2+</p><button onclick="location='https://marketplace.firefox.com/app/guitar-effects/'">Instalar</button></td>
+<td class="app"><img src="about/chrome.png"/><p>Chrome 29+</p><p>Chrome para Android 31+</p><button onclick="location='https://chrome.google.com/webstore/detail/guitar-effects/ddlfmiinmieaekgplhpjdfdbkbcaoakk'">Instalar</button></td>
+</tr></table>
+<p style="font-size:10px;text-align:center;margin-bottom:0">Muy pronto mas plataformas disponibles...</p>
+</div>
+<div id="p5">
+<h2>¡Vuelvete un sponsor!</h2>
+<div class="wrapper">
+<p><b>¿Deseas publicar tus anuncios en Guitar-Effects?</b> Si tienes anuncios relacionados con musica puedes anunciarlos en GE. Puedes llegar a miles de usuarios aficionados a la música cada dia.</p>
+<p><b>¿Eres un fabricante de productos electronicos?</b> Fabrica los adapatores y/o cables que puedan ser usados con GE y te agregaremos a nuestra lista de proveedores.</p>
+<p><b>¿Deseas contribuir al desarrollo de Guitar-Effects?</b> Aceptamos cualquier tipo de ayuda que desees brindarnos, recien empezamos y no queremos abandonar este proyecto.</p>
+<h3>Contactanos</h3>
+<form action="form.php" method="post">
+<p><span>Tu nombre/empresa:<span><input type="text" name="name"/></p>
+<p><span>Email de contacto:</span><input type="text" name="email"/></p>
+<span>Mensaje:</span><br>
+<textarea name="message"></textarea><br>
+<input type="submit" name="send" value="Enviar">
+</form>
+<br>
+</div>
+</div>
+<footer>Copyright Claudio M. Carrazana © 2014</footer>
+<div id="gallery_full" onclick="this.style.display='none'" style="display:none">
+<img src="about/cap1.jpg"/>
+<img src="about/cap2.jpg"/>
+<img src="about/cap3.jpg"/>
+<img src="about/cap4.jpg"/>
+<img src="about/cap5.jpg"/>
+</div>
+</body>
+</html>

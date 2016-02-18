@@ -1,0 +1,29 @@
+{
+    "version": "1.4.1",
+    "name": "Guitar-Effects",
+    "description": "Now you can carry your pedalboard everywhere. Plug in your guitar (or bass), add the pedals you want and start playing!",
+    "launch_path": "/index.html",
+    "icons": {
+        "32": "/webapp/32.png",
+        "48": "/webapp/48.png",
+        "60": "/webapp/60.png",
+        "72": "/webapp/72.png",
+        "90": "/webapp/90.png",
+        "128": "/webapp/128.png",
+        "256": "/webapp/256.png"
+    },
+    "developer": {
+        "name": "Claudio Mariano Carrazana",
+        "url": "http://poweredbylinux.es"
+    },
+    "installs_allowed_from": ["*"],
+    "locales": {
+        "en": {
+            "description": "Now you can carry your pedalboard everywhere. Plug in your guitar (or bass), add the pedals you want and start playing!"
+        },
+        "es": {
+            "description": "MUY IMPORTANTE: esta aplicación necesita Firefox OS 1.2 para funcionar, de lo contrario solo verá el cartel de CARGANDO... Ahora usted puede llevar su pedalera en todas partes. Conecte su guitarra (o bajo), añade los pedales que desee y empiece a tocar!"
+        }
+    },
+    "default_locale": "en"
+} 

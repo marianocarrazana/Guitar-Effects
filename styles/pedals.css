@@ -1,0 +1,146 @@
+#chorussupercharger .label-right{left:181px}
+#tremolo .label-right{left:161px}
+#eqlow .label-right-middle,
+#eqhigh .label-right-middle
+{left:178px}
+#eqlow .label-left-middle,
+#eqhigh .label-left-middle
+{left:38px}
+#the-ripper .label-right-middle{left:189px}
+#flangerdarkmouth .label-left-middle{left:18px}
+#flangermanhattan .label-right{left:162px}
+#doppler .label-left-middle{left:26px}
+#doppler .label-right-middle{left:185px}
+#bitcrusher .label-left-middle{left:18px}
+#bitcrusher .label-right-middle{left:201px}
+#flangerclassic .label-right-middle{left:186px}
+#flangersilver .label-left-middle,#flangerstereo .label-left-middle{left:19px}
+#flangersilver .label-right-middle,#flangerstereo .label-right-middle{left:190px}
+#sterefy .label-right{left:162px}
+#sterefy .label-left{left:59px}
+
+#sterefy name{font-family: 'Lily Script One', cursive;color:#ddd;text-shadow:1px 2px 5px #a00}
+#ringring name{font-family: 'Lily Script One', cursive;text-shadow:1px 2px 5px #088}
+
+#tremolo name{font-family: 'Exo 2', sans-serif!important;color:#ddd}
+
+#bitcrusher name,#digitalizer name{color:white}
+
+#reverbclassic name,#reverbclassic subname,
+#reverbsmallroom name,#reverbsmallroom subname,
+#reverbcatedral name,#reverbcatedral subname,
+#recorder name,#doppler name
+{font-family: 'Exo 2', sans-serif!important}
+
+#doppler name{color:white;text-shadow:0 0 10px white;}
+
+#delaymono name,#delaymono subname,
+#delaystereo name,#delaystereo subname,
+#eqmid name,#eqmid subname,
+#flangersilver name, #flangersilver subname,
+#flangerstereo name, #flangerstereo subname
+{font-family: 'Maven Pro', sans-serif!important}
+
+#fuzzbit name,#fuxxboz name,
+#fuzzbit subname,#fuxxboz subname
+{color:white;text-shadow:-2px 2px 10px black}
+
+#equalizer3band name,
+#fuzzbit name,#fuxxboz name,
+#fuzzbit subname,#fuxxboz subname
+{font-family: 'Press Start 2P', cursive!important;padding-top:12px;font-size:28px}
+
+#equalizer3band subname
+{font-family: 'Press Start 2P', cursive!important;padding-top:12px;font-size:24px}
+
+#eqpeak name,#eqpeak subname{color:#0f0}
+#eqhigh name,#eqhigh subname{color:#00f}
+#eqlow name,#eqlow subname{color:#f00}
+
+#flangerclassic name,#flangermanhattan name,#flangerdarkmouth name{color:#0f0}
+#flangerclassic subname{color:orange}
+#flangermanhattan subname{color:white}
+#flangerdarkmouth subname{color:black}
+
+#compressor name
+{font-family: 'Keania One', cursive;}
+
+#eqpeak name,#eqpeak subname,
+#eqhigh name,#eqhigh subname,
+#eqlow name,#eqlow subname
+{font-family: 'Audiowide', cursive!important}
+
+#overdrive name,#chorussupercharger name,#chorusclassic name,#analyser name
+{font-family: 'Audiowide', cursive!important;font-size:44px}
+
+#chorussupercharger subname,#chorusclassic subname
+{font-family: 'Audiowide', cursive!important;font-size:20px}
+#analyser subname:after{content:"Tuner";font-family: 'Audiowide', cursive!important;font-size:30px}
+
+#analyser-note
+{
+    background:#222;
+    font-size:50px;
+    color:red;
+    text-shadow:0 0 3px red;
+    position:absolute;
+    width:200px;
+    height:90px;
+    text-align:center;
+    top:40px;
+    left:35px;
+    border-radius:5px;
+    overflow:hidden;
+}
+#note-a{position:absolute;width:240px;left:-20px}
+#note-a td{width:33%;text-align:center;font-family: 'Keania One', cursive;}
+#detune-n{position:absolute;bottom:0;left:88px;}
+
+#recorder-icon
+{
+    position:absolute;
+    top:57px;
+    left:85px;
+    background:red;
+    width:100px;
+    height:53px;
+    text-align:center;
+    padding-top:3px;
+    border-radius:5px;
+    border:1px solid #444;
+    box-shadow:0 0 10px red;
+}
+
+#overdrive{background-color:#ff0}
+#reverbclassic{background-color:#11d}
+#reverbcatedral{background-color:#448}
+#reverbsmallroom{background-color:#293}
+#limiter{background-color:#a00}
+#convolver{background-color:#af0}
+#cabinet{background-color:#aaa}
+#overscream{background-color:#e50}
+#fuzz{background-color:#a2a}
+#ringring{background-color:#0df}
+#delaymono{background-color:#588}
+#delaystereo{background-color:#de2}
+#equalizer3band{background-color:#0dd}
+#chorussupercharger{background-color:#63f}
+#chorusclassic{background-color:#f46}
+#tremolo{background-color:#222}
+#analyser{background-color:#dde}
+#recorder{background-color:#920}
+#autoreverb{background-color:#888}
+#eqmid{background-color:#39f}
+#eqpeak,#eqhigh,#eqlow{background-color:#111}
+#fuzzbit{background-color:#00f}
+#fuxxboz{background-color:#0f0}
+#doppler{background-color:#75a}
+#flangerclassic,#flangermanhattan,#flangerdarkmouth{background-color:#15b}
+#bitcrusher{background-color:#523}
+#digitalizer{background-color:#253}
+#compressor{background-color:#39a}
+#the-ripper{background-color:red}
+#the-bytter{background-color:#22f}
+#flangersilver{background-color:#777;box-shadow:inset 2px -5px 30px rgba(255,255,255,.6),0 -5px 15px black;}
+#flangerstereo{background-color:#0d1;box-shadow:inset 2px -5px 35px rgba(0,0,255,.6),0 -5px 15px black;}
+#sterefy{background-color:#111;box-shadow:inset 2px -5px 20px rgba(255,0,0,.6),0 -5px 15px black;}

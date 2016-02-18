@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html manifest="ge.manifest">
+<head>
+<script>
+var appType="web";debugF=true;var compatible;
+if(window.AudioContext||window.webkitAudioContext)compatible=true;
+else compatible=false;
+</script>
+<title>Guitar-Effects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="stylesheet" type="text/css" href="styles/fonts.css" />
+<link rel="stylesheet" type="text/css" href="styles/base.css" />
+<link rel="stylesheet" type="text/css" href="styles/pedals.css" />
+<script type="text/javascript" src="scripts/ge.js"></script>
+<script type="text/javascript" src="scripts/pedals.js"></script>
+<script type="text/javascript" src="scripts/cabinets.js"></script>
+<script type="text/javascript" src="scripts/amplifiers.js"></script>
+<script type="text/javascript" src="scripts/base.js"></script> 
+<!--<script type="text/javascript" src="scripts/compiled.js"></script>-->
+</head>
+<body onresize="posPedals()">
+
+<script>
+if(!compatible){
+ document.write("<div id='incompatible'>");
+	if(appType=="web")document.write("Your browser is not compatible. Please update to last version.\nIf you are using Firefox OS make sure you have version 1.2 (or newer).");
+	if(appType=="android")document.write("The audio acceleration could not be enabled on your device.");
+ document.write("</div>");
+}
+</script>
+<loading>
+<div id="circles">
+<circle id="c4"></circle>
+<circle id="c5"></circle>
+<circle id="c2"></circle>
+<circle id="c3"></circle>
+<circle></circle>
+<p id="text-load">
+<script>
+var lang=navigator.language.toLowerCase();
+if(lang=="es"||lang=="es-es"||lang=="es-419"||lang=="es-ar"||lang=="es-cl"||lang=="es-us"||lang=="es-ve")
+{document.write("Cargando...");lang="es"}
+else{document.write("Loading...")}
+</script>
+</p>
+</div>
+<p id="text-important">
+<script>
+if(lang=="es")
+{document.write("Importante: Esta aplicación sólo es compatible con Firefox 25(escritorio), Firefox Mobile 26, Firefox OS 1.2 y Chrome / Chromium 29(escritorio) o las nuevas versiones de ellos. En otros navegadores puede no funcionar o tener una funcionalidad reducida. Para Android 4.0+ puedes descargar la version nativa desde Google Play.")}
+else
+{document.write("Important: This application is only compatible with Firefox 25(desktop), Firefox Mobile 26, Firefox OS 1.2 and Chrome / Chromium 29(desktop only) or newer versions of them. In other browsers may not work or have reduced functionality. For Android 4.0+ you can download the native version from the Google Play.")}
+</script>
+</p>
+</loading>
+<div id="options-button" onclick="showOptions()"><img src="img/options.png"/></div>
+<div id="options">
+<table id="table-options">
+<tr>
+<td id="demo" onclick="playDemo()">Loading Demo...</td>
+</tr>
+<tr><td>
+Buffer Length:
+<select id="buffer-length" onchange="changeBufferSize(this.value)">
+<option value="256">256(Low-Latency)</option>
+<option value="512">512</option>
+<option value="1024">1024</option>
+<option value="2048">2048(Default)</option>
+<option value="4096">4096</option>
+<option value="8192">8192(High-Quality)</option>
+</select>
+</td></tr>
+<tr><td>
+<button onclick="location.reload()">Restart Guitar-Effects</button>
+</td></tr>
+<tr><td>
+Share this app:<br>
+<img src="img/google+.png" onclick="share('googleplus')" id="share-google" />
+<img src="img/facebook.png" onclick="share('facebook')" id="share-facebook" />
+<img src="img/twitter.png" onclick="share('twitter')" id="share-twitter" />
+</td></tr>
+<tr><td id="copyright"><a href="mailto:marianocarrazana@gmail.com" title="Send a email">
+Copyright Claudio M. Carrazana © 2014</a>
+</td></tr>
+</table>
+</div>
+<div id="shareNow" onclick="this.style.display='none'">Share this app and we will add more effects soon...(+shares =  +effects)</div>
+<div id="msg" style="display:none">
+<div id="closemsg" onclick="this.parentNode.style.display='none';document.getElementById('frame-help').src=''">
+<script>
+if(lang=="es"){document.write("Cerrar");}
+else{document.write("Close");}
+</script>
+</div>
+<iframe id="frame-help" src=""></iframe>
+</div>
+<div id="pedals-list"></div>
+<div id="cabinets-list"></div>
+<div id="amplifiers-list"></div>
+<table id="tab-cont">
+<tr><td style="height:29px">
+<table id="header">
+<tr>
+<td id="plus-pedals" onclick="listPedals(true)">+Stomp</td>
+<!--<td id="shop" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='http://imagine5.com.ar/guitar-effects/shop.html'"><img src="img/shop.png" alt="shop"/></td>-->
+<td></td>
+<td id="mic" onclick="playLineIn()" style="background:red"><img src="img/mic.png" alt="mic"/></td>
+<td id="help" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='http://imagine5.org/guitar-effects/help.html'">
+?
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td id="container">
+<div id="div-pedals">
+<table id="pedals">
+<tr id="del-pedals">
+</tr>
+<tr id="add-pedals">
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td id="cab-model">
+<table style="width:100%">
+<tr>
+<td id="ampcab" onclick="showAmp()">+</td>
+<td id="amp-s">Amplifier</td>
+<td class="cabSwitch" onclick="swAmp(this)" style="background:#0f0">ON</td>
+<td id="cabinet-s">Cabinet</td>
+<td class="cabSwitch" onclick="swCab(this)" style="background:#f00">OFF</td>
+</tr>
+</table>
+</div>
+</td></tr>
+</table>
+<div id="amp-options">
+<h3>Amplifier</h3>
+Model:<button id="amplifier-s2" onclick="listAmplifiers(true)"></button>
+<p style="text-align:center">Gain</p>
+<slider min="0" max="1" value="1" length="200" eval="linear" connect="amplifier.out.gain.value" style="left:60px;top:85px"></slider>
+<p style="text-align:center">Distortion</p>
+<slider min="0" max="10" value="1" length="200" eval="function" connect="amplifier.drive" style="left:60px;top:130px"></slider>
+<p style="text-align:center">EQ Low</p>
+<slider min="-10" max="10" value="0" length="200" eval="linear" connect="amplifier.lowEq.gain.value" style="left:60px;top:175px"></slider>
+<p style="text-align:center">EQ Mid</p>
+<slider min="-10" max="10" value="0" length="200" eval="linear" connect="amplifier.midEq.gain.value" style="left:60px;top:220px"></slider>
+<p style="text-align:center">EQ High</p>
+<slider min="-10" max="10" value="0" length="200" eval="linear" connect="amplifier.highEq.gain.value" style="left:60px;top:265px"></slider>
+<h3>Cabinet</h3>
+Model:<button id="cabinet-s2" onclick="listCabinets(true)"></button>
+<p style="text-align:center">Gain</p>
+<slider min="0" max="10" value="2" length="200" eval="linear" connect="cabinet.out.gain.value" style="left:60px;top:370px"></slider>
+<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+	  "name": "Guitar-Effects",
+	  "version": "1.3",
+	  "icons": {"128": "128.png" },
+	  "description": "Now you can carry your pedalboard everywhere. Plug in your guitar (or bass), add the pedals you want and start playing!",
+	  "short_name": "GuitarEffects",
+	  "app": {
+	    "urls": [
+	      "http://guitar-effects.imagine5.org/index.html"
+	    ],
+	    "launch": {
+	      "web_url": "http://guitar-effects.imagine5.org/index.html"
+	    }
+	  },
+	  "manifest_version": 2
+}

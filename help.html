@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>Help GE</title>
+<link rel="stylesheet" type="text/css" href="styles/fonts.css" />
+<meta charset="utf-8" />
+<style>
+body
+{
+ font-family: 'Maven Pro', sans-serif;
+ -webkit-user-select: none;-moz-user-select: none;
+ -ms-user-select: none;-o-user-select: none;user-select: none;
+ margin:0;padding:0;
+}
+br{margin:15px}
+img{max-width:98%;margin:0 auto;display:block;height:auto}
+dial
+{
+    display:block;
+    position:relative;
+    width:52px;height:52px;
+    cursor:pointer;
+    background:url(img/dial-limit.png)
+}
+dial div{background:url(img/dial.png) no-repeat;}
+.selector
+{
+    width:100%;
+    text-align:center;
+    font-size:32px;
+    border-bottom:2px groove gray;
+    background:#2ad;
+    margin:0;
+    color:white;
+    text-shadow:1px 0 3px black;
+    cursor:pointer;
+    transition:all 2s linear;
+}
+.selector:hover
+{
+    background-color:#3bf;
+    border-color:white;
+    transition:all .3s;
+}
+#title
+{
+    margin:0;
+    text-align:center;
+    height:32px;
+    width:100%;
+    font-size:29px;
+    font-family: 'New Rocker', sans-serif;
+    background:#555;
+    color:white;
+    text-shadow:0 0 5px black;
+    box-shadow:inset 0 0 15px black;
+    
+}
+.nevada
+{
+	text-align:center;
+	font-size:150%;
+	background:white;
+}
+</style>
+<script>
+var lang=navigator.language.toLowerCase();
+if(lang=="es"||lang=="es-es"||lang=="es-419"||lang=="es-ar"||lang=="es-cl"||lang=="es-us"||lang=="es-ve")lang="es";
+function load()
+{
+ if(lang=="es"){id("help-en").style.display="none";}
+ else{id("help-es").style.display="none";}
+ loadDials();
+ var selec=document.getElementsByClassName("selector");
+ for(var i=0;i<selec.length;i++)
+ {
+	selec[i].onclick=function(){selectInfo(this)};
+ }
+ var ess=document.getElementById("help-es");
+ for(var i=0;i<ess.children.length;i++)if(ess.children[i].className!="selector")ess.children[i].style.display="none";
+ var ess=document.getElementById("help-en");
+ for(var i=0;i<ess.children.length;i++)if(ess.children[i].className!="selector")ess.children[i].style.display="none";
+}
+function id(element){return document.getElementById(element)}
+function tag(element){return document.getElementsByTagName(element)}
+function loadDials()
+{
+	for(var i=0;i<tag("dial").length;i++){
+	 start=parseFloat(tag("dial")[i].getAttribute("start"));
+	 min=parseInt(tag("dial")[i].getAttribute("min"));
+	 max=parseInt(tag("dial")[i].getAttribute("max"));
+	 createDial(tag("dial")[i],start,min,max,10000,document.body);
+	}
+}
+var numDial=0;
+var dialEnabled,s2,x1,x2,num;
+var mouseM=new Array();
+var s = new Array();
+var c = new Array();
+var ma = new Array();
+var mi = new Array();
+var dV = new Array();
+var se = new Array();
+var element,cX,cY,x2,y2,x3,y3,x4,y4;
+function createDial(dial,defaultValue,minValue,maxValue,sensitivity,container)
+{
+		s[numDial]=dial;
+		s[numDial].innerHTML="<div style=\"width:100%;height:100%\"></div>";
+		ma[numDial]=maxValue;
+		mi[numDial]=minValue;
+		dV[numDial]=defaultValue;
+		se[numDial]=sensitivity;
+		c[numDial]=270/(ma[numDial]-mi[numDial]);
+		s[numDial].children[0].style['-webkit-transform'] = 'rotate(' + ((dV[numDial]-mi[numDial])*c[numDial]) + 'deg)';
+		s[numDial].children[0].style['-moz-transform'] = 'rotate(' + ((dV[numDial]-mi[numDial])*c[numDial]) + 'deg)';
+		s[numDial].children[0].style['transform'] = 'rotate(' + ((dV[numDial]-mi[numDial])*c[numDial]) + 'deg)';
+		s[numDial].onmousedown = function(evt){x1=evt.clientX;dialEnabled=1;s2=this}
+		s[numDial].addEventListener('touchstart', function(evt){x1=evt.changedTouches[0].clientX;dialEnabled=1;s2=this} ,false);
+		container.onmouseup = function(){dialEnabled=0;s2=null}
+		container.addEventListener('touchend', function(){dialEnabled=0;s2=null},false);
+		var move = function(evt){
+			if(dialEnabled==1){evt.preventDefault()}
+			for(var i=0;i<numDial;i++){
+				if(s[i]==s2){num=i}
+				}
+			if(dV[num]<mi[num]){dV[num]=mi[num];dialEnabled=0;
+				x3=(dV[num]-mi[num])*c[num];
+				s2.children[0].style['-webkit-transform'] = 'rotate(' + x3 + 'deg)';
+				s2.children[0].style['-moz-transform'] = 'rotate(' + x3 + 'deg)';
+				s2.children[0].style['transform'] = 'rotate(' + x3 + 'deg)';
+				s2.value=dV[num];}
+			if(dV[num]>ma[num]){dV[num]=ma[num];dialEnabled=0;
+				x3=(dV[num]-mi[num])*c[num];
+				s2.children[0].style['-webkit-transform'] = 'rotate(' + x3 + 'deg)';
+				s2.children[0].style['-moz-transform'] = 'rotate(' + x3 + 'deg)';
+				s2.children[0].style['transform'] = 'rotate(' + x3 + 'deg)';
+				s2.value=dV[num];}
+			if(dialEnabled==1 && dV[num]>=mi[num] && dV[num]<=ma[num]){
+				try{x2=(evt.changedTouches[0].clientX-x1)/se[num]}
+				catch(err){x2=(evt.clientX-x1)/se[num]}
+				x3=(dV[num]-mi[num])*c[num];
+				s2.children[0].style['-webkit-transform'] = 'rotate(' + (x3+x2) + 'deg)';
+				s2.children[0].style['-moz-transform'] = 'rotate(' + (x3+x2) + 'deg)';
+				s2.children[0].style['transform'] = 'rotate(' + (x3+x2) + 'deg)';
+				dV[num]+=x2;
+				s2.value=dV[num];
+			}
+				
+				}
+			container.onmousemove = move;
+			container.addEventListener('touchmove',move ,false);
+			numDial++;
+}
+function selectInfo(el)
+{
+ var sel=el.parentNode;
+ var nn;
+ for(var i=0;i<sel.children.length;i++)
+ {
+	if(sel.children[i]==el){nn=i+1}
+	if(sel.children[i].className!="selector")sel.children[i].style.display="none";
+ }
+ sel.children[nn].style.display="block";
+}
+</script>
+</head>
+<body onload="load()" ondragstart="return false">
+<div style="position:relative;width:100%">
+<div id="title">Guitar-Effects</div>
+<div class="nevada">
+Support The Digital Guitar Nevada!
+<img src="nevada.png" />
+<a href="http://imagine5.org/nevada">Click here</a> or enter in your PC: imagine5.org/nevada
+</div>
+<div id="help-en">
+<div class="selector">Speed ​​and compatibility</div>
+<div>
+Guitar-Effects is available for modern browsers, Firefox OS, Android and very soon on iOS and Tizen.<br>
+Guitar-Effects only supports Firefox OS 1.2 or newer.<br>
+<b>Some effects, such as Delay, Chorus and Reverbs, need a lot of processing speed.</b> and not recommended for use in mobile devices.<br>
+If you use Android can significantly improve the speed by updating your system to version 4.1 or newest.
+</div>
+<div class="selector">Level control</div>
+<div>
+The effects pedals have a volume control(<b>Level</b>), however this only works if the cabinet is off and the pedal is the last to be added to fix this issue you can use a pedal <b>LIMITER</b>.<br>
+Some effects, like reverbs, use <b>Level</b> control to control the effect level.
+</div>
+<div class="selector">Controls</div>
+<div><b>How to use the controls:</b> just press control and move the mouse (or finger) to the left (to decrease) or right (to increase). Try it:
+<p style="text-align:center"><-move to left to decrease<dial style="margin:0 auto" start="0.5" min="0" max="1"></dial>move to right to increase-></p>
+</div>
+<div class="selector">Adding effects</div>
+<div><b>How to use the pedalboard:</b> You can start by selecting the cabinet, then add (with "+Stomp") or remove some pedals (with "Delete"). The processing order of the effects depends on the order in which you add, the first to be added will be the first to be processed.<br>
+Touch under the stomp to turn them off (or turn them on).<br>
+And now you can press the microphone icon to turn on the microphone (use headphones or external speakers to avoid feedback), or listen to the demo by clicking "Play Demo".</div>
+<div class="selector">Guitar-Effects with a PC</div>
+<div>Most of the instruments bring a audio jack, if your device does not have a jack you can buy a Jack to Mini-Jack (3.5mm) adapter. When you have what is necessary, connect the audio output of the instrument to the microphone input of your device.<br>
+<img src="img/guitar-pc.jpg" />
+</div>
+<div class="selector">Guitar-Effects with a mobile</div>
+<div>In mobile devices the audio input and output may be shared, then you have three options:</br>
+1- Connect the device to an external speaker and use the microphone of your device to capture the sound of the instrument. This will give us a very poor audio quality.</br>
+2- Buy an iRig.<br>
+3- Buy a Mini-Jack (Male) to 3 RCA(Male) cable and a RCA(female) to Jack(Male) adapter. Connect them as follows:<br>
+<img src="img/guitar-phone.jpg" />
+<small style="width:100%;text-align:center;display:block">(The color combination can change)</small>
+If your speakers don't have a RCA in, try using a 2 RCA(females) to Jack(male) adapter.<br>
+You can buy all these element in a electronic shop.<br>
+</div>
+<!--<div class="selector">Buying new effects</div>
+<div>
+You can buy new effects pedal pressing in the shopping cart icon. All effects have their prices in U.S. dollars.<br>
+All effects that you buy on any platform will be available immediately for all operating systems.<br>
+To retrieve already purchased effects: access to the store and login(pressing <b>Login</b>) with your account.</div>-->
+</div>
+<div id="help-es">
+<div class="selector">Velocidad y compatibilidad</div>
+<div>
+Guitar-Effects se encuentra disponible para navegadores modernos, Firefox OS, Android y dentro de muy poco para iOS y Tizen.<br>
+Guitar-Effects solo es compatible con Firefox OS 1.2 o mas nuevo.<br>
+<b>Algunos efectos, como los Delays, Chorus y Reverbs, necesitan una gran cantidad de velocidad de procesamiento</b> y no se recomienda su uso en dispositivos móviles.<br>
+Si utiliza Android puede mejorar considerablemente la velocidad actualizando su sistema a la versión 4.1 o una mas nueva.
+</div>
+<div class="selector">Level control</div>
+<div>Los pedales tienen un control de volumen(<b>Level</b>), sin embargo este solo funciona si el gabinete esta apagado y el pedal es el ultimo en ser agregado, para solucionar este inconveniente puede usar un pedal <b>LIMITER</b>.<br>
+Algunos efectos, como reverbs, utilizan el control <b>Level</b> para controlar el nivel del efecto.</div>
+<div class="selector">Controles</div>
+<div>Para usar los controles sólo tiene que pulsar el control y mueva el ratón (o el dedo) a la izquierda (para disminuir) o a la derecha (para aumentar). Inténtelo:
+<p style="text-align:center"><-mueva a la izquierda para disminuir<dial style="margin:0 auto" start="0.5" min="0" max="1"></dial>mueva a la derecha para aumentar-></p></div>
+<div class="selector">Agregando efectos</div>
+<div>Puede empezar seleccionando el Gabinete(CABINET), entonces agregue (con "+Stomp") o quite algunos pedales (con "Delete"). El orden de proceso de los efectos depende del orden en que lo hayas agregado, los primeros que hayas agregado serán los primeros en ser procesados.<br>
+Toca debajo de los pedales para apagarlos (o para volverlos a prender).<br>
+Y ahora puede presionar en el icono del micrófono para encender la linea de entrada (use parlantes externos o auriculares para evitar el feedback), o puede escuchar el demo presionando en "Play Demo".</div>
+<div class="selector">Usar Guitar-Effects con una pc</div>
+<div>La mayoría de los instrumento tienen un conectar Jack de audio, si tu dispositivo no tiene una entrada Jack puedes comprar un adaptador Jack a Mini-Jack (3.5mm). Cuando tengas lo necesario conecta todo como en la siguiente imagen:<br>
+<img src="img/guitar-pc.jpg" />
+</div>
+<div class="selector">Usar Guitar-Effects con un móvil</div>
+<div>En dispositivos móviles la entrada de audio y la salida pueden estar compartidas, en este caso tiene tres opciones:<br>
+1- Conecta el dispositivo a una salida de audio externa y utiliza el micrófono de tu dispositivo para capturar el sonido del instrumento. Esto le dará una calidad de audio muy pobre.<br>
+2- Compre un iRig.<br>
+3- Compre un cable Mini-Jack(Macho) a 3 RCA(Machos) y un adaptador de RCA(Hembra) a Jack(Macho). Conéctelos de la siguiente forma:<br>
+<img src="img/guitar-phone.jpg" />
+<small style="width:100%;text-align:center;display:block">(La combinación de colores puede variar)</small>
+Si sus parlantes o amplificadores no tienen una entrada RCA puede usar un adaptador de 2 RCA(hembras) a Jack(Macho).<br>
+Los elementos anteriores suelen encontrarse en cualquier tienda de electrónica.<br>
+</div>
+<!--<div class="selector">Comprando nuevos efectos</div>
+<div>Puede comprar nuevos efectos en la tienda de efectos presionando en el icono de carrito de compra. Todos los pedales tienen sus precios en dolares estadounidenses.<br>
+Todos los efectos que compre en cualquier plataforma estarán disponibles inmediatamente para todos los sistemas operativos con los cuales Guitar-Effects sea compatible.<br>
+Si quiere recuperar los efectos que ya compro en otra plataforma, solo tiene acceder a la tienda de efectos e ingresar(presionando en <b>Login</b>) con su cuenta.</div>-->
+</div>
+</div>
+</body>
+</html>
