@@ -13,6 +13,7 @@ else compatible=false;
 <link rel="stylesheet" type="text/css" href="styles/fonts.css" />
 <link rel="stylesheet" type="text/css" href="styles/base.css" />
 <link rel="stylesheet" type="text/css" href="styles/pedals.css" />
+<link rel="stylesheet" type="text/css" href="styles/msg.css" />
 <script type="text/javascript" src="scripts/ge.js"></script>
 <script type="text/javascript" src="scripts/pedals.js"></script>
 <script type="text/javascript" src="scripts/cabinets.js"></script>
@@ -77,16 +78,18 @@ Buffer Length:
 </td></tr>
 <tr><td>
 Share this app:<br>
-<img src="img/google+.png" onclick="share('googleplus')" id="share-google" />
 <img src="img/facebook.png" onclick="share('facebook')" id="share-facebook" />
 <img src="img/twitter.png" onclick="share('twitter')" id="share-twitter" />
 </td></tr>
+<tr><td>
+	<a class="support" href="https://www.patreon.com/bePatron?u=18160074" target="_blank">Support me on Patreon</a>
+</td></tr>
 <tr><td id="copyright"><a href="mailto:marianocarrazana@gmail.com" title="Send a email">
-Copyright Claudio M. Carrazana © 2014</a>
+Copyright Claudio M. Carrazana © 2014-2018</a>
 </td></tr>
 </table>
 </div>
-<div id="shareNow" onclick="this.style.display='none'">Share this app and we will add more effects soon...(+shares =  +effects)</div>
+<!--<div id="shareNow" onclick="this.style.display='none'">Share this app and we will add more effects soon...(+shares =  +effects)</div>-->
 <div id="msg" style="display:none">
 <div id="closemsg" onclick="this.parentNode.style.display='none';document.getElementById('frame-help').src=''">
 <script>
@@ -107,7 +110,7 @@ else{document.write("Close");}
 <!--<td id="shop" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='http://imagine5.com.ar/guitar-effects/shop.html'"><img src="img/shop.png" alt="shop"/></td>-->
 <td></td>
 <td id="mic" onclick="playLineIn()" style="background:red"><img src="img/mic.png" alt="mic"/></td>
-<td id="help" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='http://imagine5.org/guitar-effects/help.html'">
+<td id="help" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='help.html'">
 ?
 </td>
 </tr>

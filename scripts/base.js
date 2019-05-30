@@ -126,8 +126,9 @@ var endTry=function()
  if(lang=="es"){alert("Tiempo Terminado");}
  else{alert("Time finished");}
 }
+var firstTime=false;
 if(localStorage.lastPedals==null)
-{localStorage.lastPedals="overdrive,";var firstTime=true}
+{localStorage.lastPedals="overdrive,";firstTime=true}
 if(localStorage.limiter==null)localStorage.limiter="limiter,";
 if(localStorage.compressor==null)localStorage.compressor="";
 if(localStorage.recorder==null)localStorage.recorder="";
@@ -202,7 +203,17 @@ var ctx,board,sterefy,flangerstereo,flangersilver,thebytter,theripper,compressor
 function loadPedals(tryMode)
 {
  if(!tryModeOn){
-	if(firstTime!=true){id("shareNow").style.display=id("msg").style.display="none"}
+	if(firstTime){
+		//id("shareNow").style.display=id("msg").style.display="none";
+		var textmsg;
+		if(lang=="es")textmsg="Wow! tantos años pasaron desde la primera publicación de esta aplicacion(2013-2014?).\
+			<br>La verdad es que perdí la clave de firmado asi que tengo que publicarla como otra app ahora."
+		else textmsg="Wow! So many years have passed since the first publication of this application (2013-2014?).\
+			<br>The truth is that I lost the signing key so I have to publish it as another app now."
+		textmsg+='<br><a class="support" href="https://www.patreon.com/bePatron?u=18160074" target="_blank">Support me on Patreon</a>';
+		message(textmsg);
+		firstTime=false;
+	}
 	try{recorder.rec.onaudioprocess=function(e){};}catch(err){}
 	for(var i=0;i<effectsArray.length;i++)effectsArray[i].out.disconnect();
 	try{microphone.disconnect();}catch(err){}
@@ -766,7 +777,7 @@ function readData(fileURL)
 function share(web)
 {
 	var url="";var webD="";
-	if(appType=="web")webD="guitar-effects.imagine5.com.ar";
+	if(appType=="web")webD="https://larutaproducciones.xyz/guitareffects";
 	if(appType=="android")webD="play.google.com/store/apps/details?id=com.xtraid.guitareffects";
 	switch(web)
 	{
@@ -776,4 +787,18 @@ function share(web)
 	}
   var win=window.open(url, '_blank');
   win.focus();
+}
+function message(text,func)
+{
+	if(id("msg-outter")==null)
+	{
+		var m="<div id=\"msg-outter\"><div id=\"msg-inner\"></div></div>"
+		document.body.insertAdjacentHTML( 'afterbegin', m );
+	}
+	scale(id("msg-inner"),0);
+	id("msg-outter").style.display="block";
+	id("msg-inner").innerHTML=text+"<button onclick=\""+func+";this.parentNode.parentNode.style.display='none'\" class=\"button-msg\">OK</button>";
+	id("msg-inner").style.left=(window.innerWidth/2)-(id("msg-inner").offsetWidth/2)+"px";
+	id("msg-inner").style.top=(window.innerHeight/2)-(id("msg-inner").offsetHeight/2)+"px";
+	scale(id("msg-inner"),1);
 }
