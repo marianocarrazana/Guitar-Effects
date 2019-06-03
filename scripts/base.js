@@ -137,6 +137,8 @@ if(localStorage.amplifierN==null)localStorage.amplifierN="RPR";
 if(localStorage.cabinet==null)localStorage.cabinet="vinuk";
 if(localStorage.cabinetN==null)localStorage.cabinetN="Vintage UK";
 //if(localStorage.purch==null)localStorage.purch="";
+if(localStorage.nruns==null)localStorage.nruns=1;
+else localStorage.nruns=parseInt(localStorage.nruns)+1;
 function generatePedal(name,subname,pot1,level1,pot2,level2,pot3,level3,pot4,level4)
 {
 	var td='<td><div class="pedal" id="'+name.toLowerCase()+subname.toLowerCase()+'">';
@@ -203,17 +205,10 @@ var ctx,board,sterefy,flangerstereo,flangersilver,thebytter,theripper,compressor
 function loadPedals(tryMode)
 {
  if(!tryModeOn){
-	if(firstTime){
-		//id("shareNow").style.display=id("msg").style.display="none";
-		var textmsg;
-		if(lang=="es")textmsg="Wow! tantos años pasaron desde la primera publicación de esta aplicacion(2013-2014?).\
-			<br>La verdad es que perdí la clave de firmado asi que tengo que publicarla como otra app ahora."
-		else textmsg="Wow! So many years have passed since the first publication of this application (2013-2014?).\
-			<br>The truth is that I lost the signing key so I have to publish it as another app now."
-		textmsg+='<br><a class="support" href="https://www.patreon.com/bePatron?u=18160074" target="_blank">Support me on Patreon</a>';
-		message(textmsg);
-		firstTime=false;
-	}
+ 	if(localStorage.nruns=="1"){
+ 		message("Connect your guitar and press the microphone icon <img style='width:auto;height:32px' src='img/mic.png' alt='mic'/> to start playing.<br>\
+ 			Some external USB cards are supported now, check the <a href='https://www.patreon.com/marianofromlaruta' target='_blank'>patreon</a> page for more information.");
+ 	}
 	try{recorder.rec.onaudioprocess=function(e){};}catch(err){}
 	for(var i=0;i<effectsArray.length;i++)effectsArray[i].out.disconnect();
 	try{microphone.disconnect();}catch(err){}

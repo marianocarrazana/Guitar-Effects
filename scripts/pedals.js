@@ -1,6 +1,6 @@
 //License: Same as pedalboard.js
 var controls=new Object();
-if(localStorage.bufferSize==null)localStorage.bufferSize="2048";
+if(localStorage.bufferSize==null)localStorage.bufferSize="512";
 var BufferLength=parseInt(localStorage.bufferSize);
 var effects=new Object();
 var noteStrings=[ "B ", "C ", "C#", "D ", "D#", "E ", "F ", "F#", "G ", "G#", "A ", "A#", "B ", "C "];
