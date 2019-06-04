@@ -12,11 +12,11 @@ Guitar-Effects+ will be available soon, all changes in GE will be added to GE+
 
 ## Compile the hybrid app
 
-###Linux, Mac OS & Windows
+### Linux, Mac OS & Windows
 
 Use Electron or NW.js. Instructions soon.
 
-###Linux
+### Linux
 
 The fast way is use Qt Creator, just create a new QT Quick project, in the main.qml replace the text for this one:
 
@@ -40,7 +40,7 @@ Window {
 
 After that just add the folder of guitar effects(rename before to www) and put inside the resources(qml.qrc/)
 
-###Android
+### Android
 
 Add to the onCreate function on MainActivity:
 
@@ -81,6 +81,6 @@ In the activity_main.xml add the webview:
 
 Finally copy the files from this repository to the assets folder(src/main/assets), create it if don't exist.
 
-###Mac OS & iOS
+### Mac OS & iOS
 
 I don't have a Mac to compile to this platforms, please contact me to marianocarrazana@gmail.com if you have one with XCode installed.

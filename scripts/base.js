@@ -207,7 +207,10 @@ function loadPedals(tryMode)
  if(!tryModeOn){
  	if(localStorage.nruns=="0"){
  		localStorage.nruns="1";
- 		message("Connect your guitar and press the microphone icon <img style='width:auto;height:32px' src='img/mic.png' alt='mic'/> to start playing.<br>\
+ 		if(lang=="es")
+ 			message("Conecte su guitarra y presione el ícono del micrófono <img style='width:auto;height:32px' src='img/mic.png' alt='mic'/> para empezar a reproducir.<br>\
+ 			Algunas placas USB son compatibles ahora, consulte la página de <a href='https://www.patreon.com/marianofromlaruta' target='_blank'>patreon</a> para más información.");
+ 			else message("Connect your guitar and press the microphone icon <img style='width:auto;height:32px' src='img/mic.png' alt='mic'/> to start playing.<br>\
  			Some external USB cards are supported now, check the <a href='https://www.patreon.com/marianofromlaruta' target='_blank'>patreon</a> page for more information.");
  	}
 	try{recorder.rec.onaudioprocess=function(e){};}catch(err){}
@@ -455,8 +458,10 @@ function listPedals(onlyshow)
  else
  {
 	translate(id("pedals-list"),-241,0);
-	var pedals_vars=["0","overdrive","overscream","fuzz1","limiter","delaymono","delaystereo","eq3band","chorusclassic","chorussupercharger","tremolo","analyser","doppler","fuxxboz","fuzzbit","eqmid","eqhigh","eqpeak","eqlow","flangerclassic","flangermanhattan","flangerdarkmouth","bitcrusher","digitalizer","recorder","r_classic","r_catedral","r_smallroom","ringring","autoreverb","convolver","compressor","theripper","thebytter","flangersilver","flangerstereo","sterefy","0"];
-	var pedals_names=["close","Overdrive","Overscream","Fuzz","Limiter","Delay-Mono","Delay-Stereo","3Band-EQ","Chorus-Classic","Chorus-Supercharger","Tremolo","Analyser-Tuner","Doppler","Fuxx-Boz","Fuzz-Bit","EQ-Mid","EQ-High","EQ-Peak","EQ-Low","Flanger-Classic","Flanger-Manhattan","Flanger-Darkmouth","Bitcrusher","Digitalizer","Recorder","Reverb-Classic","Reverb-Catedral","Reverb-Small Room","RingRing","AutoReverb","Convolver","Compressor","The-Ripper","The-Bytter","Flanger-Silver","Flanger-Stereo","Sterefy","close"];
+	//fix doppler setVelocity is not a function in chrome before remove coments for doppler
+	//fix empty record on chrome before remove coments for recorder
+	var pedals_vars=["0","overdrive","overscream","fuzz1","limiter","delaymono","delaystereo","eq3band","chorusclassic","chorussupercharger","tremolo","analyser",/*"doppler",*/"fuxxboz","fuzzbit","eqmid","eqhigh","eqpeak","eqlow","flangerclassic","flangermanhattan","flangerdarkmouth","bitcrusher","digitalizer",/*"recorder",*/"r_classic","r_catedral","r_smallroom","ringring","autoreverb","convolver","compressor","theripper","thebytter","flangersilver","flangerstereo","sterefy","0"];
+	var pedals_names=["close","Overdrive","Overscream","Fuzz","Limiter","Delay-Mono","Delay-Stereo","3Band-EQ","Chorus-Classic","Chorus-Supercharger","Tremolo","Analyser-Tuner",/*"Doppler",*/"Fuxx-Boz","Fuzz-Bit","EQ-Mid","EQ-High","EQ-Peak","EQ-Low","Flanger-Classic","Flanger-Manhattan","Flanger-Darkmouth","Bitcrusher","Digitalizer",/*"Recorder",*/"Reverb-Classic","Reverb-Catedral","Reverb-Small Room","RingRing","AutoReverb","Convolver","Compressor","The-Ripper","The-Bytter","Flanger-Silver","Flanger-Stereo","Sterefy","close"];
 	var cont="";
 	//try{var pedalsPurch=JSON.parse(localStorage.purch);}
 	//catch(err){var pedalsPurch=["a"];}

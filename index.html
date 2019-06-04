@@ -25,10 +25,9 @@ else compatible=false;
 
 <script>
 if(!compatible){
- document.write("<div id='incompatible'>");
-	if(appType=="web")document.write("Your browser is not compatible. Please update to last version.\nIf you are using Firefox OS make sure you have version 1.2 (or newer).");
-	if(appType=="android")document.write("The audio acceleration could not be enabled on your device.");
- document.write("</div>");
+	document.write("<div id='incompatible'>");
+	document.write("Your browser or webview is not compatible. Please update to the last version.\nIf you are using Android update the WebView from <a href='https://play.google.com/store/apps/details?id=com.google.android.webview' target='_blank'>here</a>.");
+	document.write("</div>");
 }
 </script>
 <loading>
@@ -72,7 +71,7 @@ Buffer Length:
 </select>
 </td></tr>
 <tr><td>
-<button onclick="location.reload()">Restart Guitar-Effects</button>
+<button onclick="location.reload()"><script>if(lang=="es")document.write("Reiniciar ");else document.write("Restart ")</script>Guitar-Effects</button>
 </td></tr>
 <tr><td>
 Share this app:<br>
@@ -80,7 +79,7 @@ Share this app:<br>
 <img src="img/twitter.png" onclick="share('twitter')" id="share-twitter" />
 </td></tr>
 <tr><td>
-	<a class="support" href="https://www.patreon.com/marianofromlaruta" target="_blank">Official Patreon Page</a>
+	<a class="support" href="https://www.patreon.com/marianofromlaruta" target="_blank"><script>if(lang=="es")document.write("Página en Patreon");else document.write("Official Patreon Page")</script></a>
 </td></tr>
 <tr><td id="copyright"><a href="mailto:marianocarrazana@gmail.com" title="Send a email">
 Copyleft Claudio M. Carrazana 2014-2019</a>
@@ -104,7 +103,7 @@ else{document.write("Close");}
 <tr><td style="height:29px">
 <table id="header">
 <tr>
-<td id="plus-pedals" onclick="listPedals(true)">+Stomp</td>
+<td id="plus-pedals" onclick="listPedals(true)">+Pedal</td>
 <!--<td id="shop" onclick="document.getElementById('msg').style.display='block';document.getElementById('frame-help').src='http://imagine5.com.ar/guitar-effects/shop.html'"><img src="img/shop.png" alt="shop"/></td>-->
 <td></td>
 <td id="mic" onclick="playLineIn()" style="background:red"><img src="img/mic.png" alt="mic"/></td>
@@ -129,9 +128,9 @@ else{document.write("Close");}
 <table style="width:100%">
 <tr>
 <td id="ampcab" onclick="showAmp()">+</td>
-<td id="amp-s">Amplifier</td>
+<td id="amp-s"><script>if(lang=="es")document.write("Amplificador");else document.write("Amplifier")</script></td>
 <td class="cabSwitch" onclick="swAmp(this)" style="background:#0f0">ON</td>
-<td id="cabinet-s">Cabinet</td>
+<td id="cabinet-s"><script>if(lang=="es")document.write("Gabinete");else document.write("Cabinet")</script></td>
 <td class="cabSwitch" onclick="swCab(this)" style="background:#f00">OFF</td>
 </tr>
 </table>
@@ -139,7 +138,7 @@ else{document.write("Close");}
 </td></tr>
 </table>
 <div id="amp-options">
-<h3>Amplifier</h3>
+<h3><script>if(lang=="es")document.write("Amplificador");else document.write("Amplifier")</script></h3>
 Model:<button id="amplifier-s2" onclick="listAmplifiers(true)"></button>
 <p style="text-align:center">Gain</p>
 <slider min="0" max="1" value="1" length="200" eval="linear" connect="amplifier.out.gain.value" style="left:60px;top:85px"></slider>
@@ -151,7 +150,7 @@ Model:<button id="amplifier-s2" onclick="listAmplifiers(true)"></button>
 <slider min="-10" max="10" value="0" length="200" eval="linear" connect="amplifier.midEq.gain.value" style="left:60px;top:220px"></slider>
 <p style="text-align:center">EQ High</p>
 <slider min="-10" max="10" value="0" length="200" eval="linear" connect="amplifier.highEq.gain.value" style="left:60px;top:265px"></slider>
-<h3>Cabinet</h3>
+<h3><script>if(lang=="es")document.write("Gabinete");else document.write("Cabinet")</script></h3>
 Model:<button id="cabinet-s2" onclick="listCabinets(true)"></button>
 <p style="text-align:center">Gain</p>
 <slider min="0" max="10" value="2" length="200" eval="linear" connect="cabinet.out.gain.value" style="left:60px;top:370px"></slider>
