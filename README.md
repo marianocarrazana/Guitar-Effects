@@ -4,15 +4,17 @@ Webaudio/HTML5 effects for guitar
 
 Guitar-Effects+ will be available soon, all changes in GE will be added to GE+
 
-## Support me on patreon
+[Demo online](https://larutaproducciones.xyz/guitareffects/online/)
 
-[https://www.patreon.com/marianofromlaruta](https://www.patreon.com/marianofromlaruta)
+[Official Page](https://larutaproducciones.xyz/guitareffects/)
+
+[Support me on patreon](https://www.patreon.com/marianofromlaruta)
 
 ## Compile the hybrid app
 
-###Windows
+###Linux, Mac OS & Windows
 
-Soon
+Use Electron or NW.js. Instructions soon.
 
 ###Linux
 

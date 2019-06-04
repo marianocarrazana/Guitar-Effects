@@ -137,7 +137,7 @@ if(localStorage.amplifierN==null)localStorage.amplifierN="RPR";
 if(localStorage.cabinet==null)localStorage.cabinet="vinuk";
 if(localStorage.cabinetN==null)localStorage.cabinetN="Vintage UK";
 //if(localStorage.purch==null)localStorage.purch="";
-if(localStorage.nruns==null)localStorage.nruns=1;
+if(localStorage.nruns==null)localStorage.nruns=0;
 else localStorage.nruns=parseInt(localStorage.nruns)+1;
 function generatePedal(name,subname,pot1,level1,pot2,level2,pot3,level3,pot4,level4)
 {
@@ -205,7 +205,8 @@ var ctx,board,sterefy,flangerstereo,flangersilver,thebytter,theripper,compressor
 function loadPedals(tryMode)
 {
  if(!tryModeOn){
- 	if(localStorage.nruns=="1"){
+ 	if(localStorage.nruns=="0"){
+ 		localStorage.nruns="1";
  		message("Connect your guitar and press the microphone icon <img style='width:auto;height:32px' src='img/mic.png' alt='mic'/> to start playing.<br>\
  			Some external USB cards are supported now, check the <a href='https://www.patreon.com/marianofromlaruta' target='_blank'>patreon</a> page for more information.");
  	}
