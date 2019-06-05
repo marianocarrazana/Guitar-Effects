@@ -458,8 +458,8 @@ function listPedals(onlyshow)
  else
  {
 	translate(id("pedals-list"),-241,0);
-	//fix doppler setVelocity is not a function in chrome before remove coments for doppler
-	//fix empty record on chrome before remove coments for recorder
+	//fix doppler setVelocity is not a function in chrome before remove comments for doppler
+	//fix empty record on chrome before remove comments for recorder
 	var pedals_vars=["0","overdrive","overscream","fuzz1","limiter","delaymono","delaystereo","eq3band","chorusclassic","chorussupercharger","tremolo","analyser",/*"doppler",*/"fuxxboz","fuzzbit","eqmid","eqhigh","eqpeak","eqlow","flangerclassic","flangermanhattan","flangerdarkmouth","bitcrusher","digitalizer",/*"recorder",*/"r_classic","r_catedral","r_smallroom","ringring","autoreverb","convolver","compressor","theripper","thebytter","flangersilver","flangerstereo","sterefy","0"];
 	var pedals_names=["close","Overdrive","Overscream","Fuzz","Limiter","Delay-Mono","Delay-Stereo","3Band-EQ","Chorus-Classic","Chorus-Supercharger","Tremolo","Analyser-Tuner",/*"Doppler",*/"Fuxx-Boz","Fuzz-Bit","EQ-Mid","EQ-High","EQ-Peak","EQ-Low","Flanger-Classic","Flanger-Manhattan","Flanger-Darkmouth","Bitcrusher","Digitalizer",/*"Recorder",*/"Reverb-Classic","Reverb-Catedral","Reverb-Small Room","RingRing","AutoReverb","Convolver","Compressor","The-Ripper","The-Bytter","Flanger-Silver","Flanger-Stereo","Sterefy","close"];
 	var cont="";

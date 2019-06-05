@@ -15,11 +15,11 @@
    width="273"
    height="480"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="pedal-on.svg"
-   inkscape:export-filename="/home/mariano/HTML/Guitar-Effects/img/pedal-on.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-filename="D:\Users\Mariano\Documentos\WEB\Guitar-Effects\img\pedal-on.png"
+   inkscape:export-xdpi="192"
+   inkscape:export-ydpi="192">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -30,14 +30,14 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1060"
+     inkscape:window-height="1028"
      id="namedview17"
      showgrid="false"
-     inkscape:zoom="0.98333331"
-     inkscape:cx="-89.294781"
-     inkscape:cy="240"
-     inkscape:window-x="-4"
-     inkscape:window-y="-4"
+     inkscape:zoom="3.8237696"
+     inkscape:cx="140.84746"
+     inkscape:cy="315.6594"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -184,7 +184,7 @@
        color-interpolation-filters="sRGB">
       <feBlend
          id="feBlend3081"
-         in2="result91"
+         in2="SourceGraphic"
          result="result1"
          mode="screen" />
       <feGaussianBlur
@@ -252,7 +252,7 @@
        color-interpolation-filters="sRGB">
       <feBlend
          id="feBlend3103"
-         in2="result91"
+         in2="SourceGraphic"
          result="result1"
          mode="screen" />
       <feGaussianBlur
@@ -322,7 +322,7 @@
        color-interpolation-filters="sRGB">
       <feBlend
          id="feBlend3150"
-         in2="result91"
+         in2="SourceGraphic"
          result="result1"
          mode="screen" />
       <feGaussianBlur
@@ -389,6 +389,20 @@
        y2="453.55933"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.42278957,0,0,1.7792172,-998.68658,-673.56721)" />
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern-1" />
   </defs>
   <metadata
      id="metadata7">
@@ -398,7 +412,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -445,16 +459,6 @@
        id="path3874"
        style="fill:#3abc00;fill-opacity:1;stroke:none;filter:url(#filter3906)"
        inkscape:connector-curvature="0" />
-    <path
-       d="m 20.847845,754.99956 c -2.178162,-0.0877 -3.69487,-3.24958 -3.69487,-3.24958 0,0 -5.654498,-7.94355 -6.04856,-9.1073 l 23.791356,0 c -0.21272,2.97186 -2.470315,3.21777 -2.470315,3.21777 l -12.144829,0.0901 3.132953,4.87701 c 0,0 1.548519,2.36445 -1.288169,3.86451 -0.443233,0.23439 -0.874203,0.3237 -1.277566,0.30747 z m 0,-24.86779 c -2.178162,0.0877 -3.69487,3.24958 -3.69487,3.24958 0,0 -5.654498,7.94355 -6.04856,9.1073 l 23.791356,0 c -0.21272,-2.97186 -2.470315,-3.21777 -2.470315,-3.21777 l -12.144829,-0.0901 3.132953,-4.87701 c 0,0 1.548519,-2.36445 -1.288169,-3.86451 -0.443233,-0.23439 -0.874203,-0.3237 -1.277566,-0.30747 z"
-       id="path3887"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.16963534px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 252.44107,754.99956 c -2.17816,-0.0877 -3.69487,-3.24958 -3.69487,-3.24958 0,0 -5.6545,-7.94355 -6.04856,-9.1073 l 23.79136,0 c -0.21272,2.97186 -2.47032,3.21777 -2.47032,3.21777 l -12.14483,0.0901 3.13295,4.87701 c 0,0 1.54852,2.36445 -1.28816,3.86451 -0.44324,0.23439 -0.87421,0.3237 -1.27757,0.30747 z m 0,-24.86779 c -2.17816,0.0877 -3.69487,3.24958 -3.69487,3.24958 0,0 -5.6545,7.94355 -6.04856,9.1073 l 23.79136,0 c -0.21272,-2.97186 -2.47032,-3.21777 -2.47032,-3.21777 l -12.14483,-0.0901 3.13295,-4.87701 c 0,0 1.54852,-2.36445 -1.28816,-3.86451 -0.44324,-0.23439 -0.87421,-0.3237 -1.27757,-0.30747 z"
-       id="path3890"
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.16963534px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       inkscape:connector-curvature="0" />
     <rect
        style="opacity:0.23394494;fill:url(#linearGradient3946);fill-opacity:1;stroke:none"
        id="rect3170"
@@ -474,5 +478,25 @@
        y="881.61859"
        id="rect3892"
        style="fill:#000000;fill-opacity:1;stroke:none" />
+    <path
+       id="path95"
+       d="m 22.249475,734.13169 -10.210478,8.8008 10.290876,9.2809"
+       style="fill:none;stroke:#000000;stroke-width:5.6943593px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path97"
+       d="m 30.932401,742.85249 -18.893404,0.08"
+       style="fill:none;stroke:#000000;stroke-width:5.6943593px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path99"
+       d="m 255.32171,734.21169 -10.21049,8.8008 10.29087,9.2809"
+       style="fill:none;stroke:#000000;stroke-width:5.6943593px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path101"
+       d="m 264.00462,743.01249 h -18.8934"
+       style="fill:none;stroke:#000000;stroke-width:5.6943593px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

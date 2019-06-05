@@ -533,12 +533,14 @@ dial
     position:relative;
     width:52px;height:52px;
     cursor:pointer;
-    background:url(../img/dial-limit.png)
+    background:url(../img/dial-limit.png);
+    background-size: 100%;
 }
 
 dial div
 {
     background:url(../img/dial.png) no-repeat;
+    background-size: 100%;
 }
 
 name
@@ -555,6 +557,7 @@ name
     text-align:center;
     -webkit-user-select: none;-moz-user-select: none;
     -ms-user-select: none;-o-user-select: none;user-select: none;
+    opacity: 0.91;
 }
 
 subname
@@ -572,6 +575,7 @@ subname
     text-align:center;
     -webkit-user-select: none;-moz-user-select: none;
     -ms-user-select: none;-o-user-select: none;user-select: none;
+    opacity:0.9;
 }
 
 switch
@@ -643,6 +647,7 @@ switch
     width:273px;
     margin:10px;
     background:url(../img/pedal-on.png) no-repeat #fff;
+    background-size: 100%;
     border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;
     box-shadow:0 -5px 15px black;
     -webkit-user-select: none;-moz-user-select: none;
