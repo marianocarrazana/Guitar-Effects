@@ -452,32 +452,30 @@ function addPedal(tp)
 	else if(tp=="compressor"){compressorP="compressor,";loadPedals();}
 	translate(id("pedals-list"),-241,0);
 }
-function listPedals(onlyshow)
+function listPedals(onlyshow)//onlyshow=true: open pedals list
 {
  if(onlyshow){translate(id("pedals-list"),0,0)}
  else
  {
 	translate(id("pedals-list"),-241,0);
-	//fix doppler setVelocity is not a function in chrome before remove comments for doppler
-	//fix empty record on chrome before remove comments for recorder
-	var pedals_vars=["0","overdrive","overscream","fuzz1","limiter","delaymono","delaystereo","eq3band","chorusclassic","chorussupercharger","tremolo","analyser",/*"doppler",*/"fuxxboz","fuzzbit","eqmid","eqhigh","eqpeak","eqlow","flangerclassic","flangermanhattan","flangerdarkmouth","bitcrusher","digitalizer",/*"recorder",*/"r_classic","r_catedral","r_smallroom","ringring","autoreverb","convolver","compressor","theripper","thebytter","flangersilver","flangerstereo","sterefy","0"];
-	var pedals_names=["close","Overdrive","Overscream","Fuzz","Limiter","Delay-Mono","Delay-Stereo","3Band-EQ","Chorus-Classic","Chorus-Supercharger","Tremolo","Analyser-Tuner",/*"Doppler",*/"Fuxx-Boz","Fuzz-Bit","EQ-Mid","EQ-High","EQ-Peak","EQ-Low","Flanger-Classic","Flanger-Manhattan","Flanger-Darkmouth","Bitcrusher","Digitalizer",/*"Recorder",*/"Reverb-Classic","Reverb-Catedral","Reverb-Small Room","RingRing","AutoReverb","Convolver","Compressor","The-Ripper","The-Bytter","Flanger-Silver","Flanger-Stereo","Sterefy","close"];
+	//to fix: micro stuttering with doppler
+	//to fix: recorder working only on firefox
+	var pedals_vars=["0","overdrive","overscream","fuzz1","limiter","delaymono","delaystereo","eq3band","chorusclassic","chorussupercharger","tremolo","analyser","doppler","fuxxboz","fuzzbit","eqmid","eqhigh","eqpeak","eqlow","flangerclassic","flangermanhattan","flangerdarkmouth","bitcrusher","digitalizer",/*"recorder",*/"r_classic","r_catedral","r_smallroom","ringring","autoreverb","convolver","compressor","theripper","thebytter","flangersilver","flangerstereo","sterefy"];
+	var pedals_names=["close","Overdrive","Overscream","Fuzz","Limiter","Delay-Mono","Delay-Stereo","3Band-EQ","Chorus-Classic","Chorus-Supercharger","Tremolo","Analyser-Tuner","Doppler","Fuxx-Boz","Fuzz-Bit","EQ-Mid","EQ-High","EQ-Peak","EQ-Low","Flanger-Classic","Flanger-Manhattan","Flanger-Darkmouth","Bitcrusher","Digitalizer",/*"Recorder",*/"Reverb-Classic","Reverb-Catedral","Reverb-Small Room","RingRing","AutoReverb","Convolver","Compressor","The-Ripper","The-Bytter","Flanger-Silver","Flanger-Stereo","Sterefy"];
 	var cont="";
-	//try{var pedalsPurch=JSON.parse(localStorage.purch);}
-	//catch(err){var pedalsPurch=["a"];}
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	if(isFirefox){
+		pedals_vars.push("recorder");
+		pedals_names.push("Recorder");
+	}
+	pedals_vars.push("0");
+	pedals_names.push("close");
 	for(var i=0;i<pedals_vars.length;i++)
 	{
 	 var purchased=true;
 	 var classes="";
 	 if(pedals_vars[i]=="0")classes="pedal-sel-close";
-	 /*if(pedals_vars[i]=="doppler")purchased=checkP(590,pedalsPurch);
-	 if(pedals_vars[i]=="flangermanhattan"||pedals_vars[i]=="flangerdarkmouth")purchased=checkP(591,pedalsPurch);
-	 if(pedals_vars[i]=="recorder")purchased=checkP(592,pedalsPurch);
-	 if(pedals_vars[i]=="analyser")purchased=checkP(593,pedalsPurch);
-	 if(pedals_vars[i]=="autoreverb")purchased=checkP(594,pedalsPurch);
-	 if(pedals_vars[i]=="bitcrusher")purchased=checkP(595,pedalsPurch);
-	 if(pedals_vars[i]=="eqpeak"||pedals_vars[i]=="eqlow"||pedals_vars[i]=="eqhigh")purchased=checkP(596,pedalsPurch);
-	 if(pedals_vars[i]=="fuxxboz"||pedals_vars[i]=="fuzzbit")purchased=checkP(597,pedalsPurch);*/
+
 	 if(purchased)cont+="<div onclick='addPedal(\""+pedals_vars[i]+"\")' class='pedal-select "+classes+"'>"+pedals_names[i]+"</div>";
 	}
 	id("pedals-list").innerHTML=cont;

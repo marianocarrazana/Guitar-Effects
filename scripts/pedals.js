@@ -513,8 +513,7 @@ function setDoppler()
 	if(d.pannerM){d.pannerPos+=d.pannerVel}
 	else{d.pannerPos-=d.pannerVel}
 	d.panner.setPosition(d.pannerPos,0,0);
-	d.panner.setVelocity(d.pannerPos*2,0,0);
-	setTimeout(setDoppler,100);
+	setTimeout(setDoppler,100);//causes micro stuttering, use buffer instead?
 }
 effects.Doppler = function() {
 		this.in = context.createGain();

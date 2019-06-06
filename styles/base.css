@@ -429,35 +429,9 @@ h2{width:100%;text-align:center;text-shadow:1px 1px 3px gray}
     border-collapse:collapse
 }
 
-#adsense
-{
-    width:320px;
-    height:50px;
-    position:fixed;
-    display:block;
-    margin:0 auto;
-    bottom:45px;
-    z-index:1;
-}
-
 @media (min-width:600px){#adsense{width:468px;height:60px}}
 @media (min-width:900px){#adsense{width:728px;height:90px}}
 @media (min-width:1100px){#adsense{width:970px;height:90px}}
-
-#adsenseLoading
-{
-    position:relative;
-    margin:5px auto;
-    display:block;
-    width:480px;
-    height:60px;
-    top:0;
-    text-align:center;
-    z-index:1;
-}
-@media (min-height:330px){#adsenseLoading{width:200px;height:200px}}
-@media (min-height:400px){#adsenseLoading{width:300px;height:250px}}
-@media (min-height:500px){#adsenseLoading{width:336px;height:280px}}
 
 #del-pedals td
 {
@@ -601,7 +575,9 @@ switch
 {
 	width:100%;
 	height:100%;
-	background:url(../img/wood.jpg) brown;
+	background:url(../img/wood.jpg) #191919;
+	background-size: auto;
+	background-repeat: repeat;
 	-webkit-user-select: none;-moz-user-select: none;
     -ms-user-select: none;-o-user-select: none;user-select: none;
 }
@@ -617,7 +593,7 @@ switch
     background:url(../img/wood2.jpg) #e80;
     top:0;left:0;
     z-index:2;
-    border-bottom:1px solid #a40;
+    border-bottom:1px solid #555;
     box-shadow:0 2px 5px black;-webkit-box-shadow:0 2px 5px black;-moz-box-shadow:0 2px 5px black;
 }
 

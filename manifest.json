@@ -1,0 +1,35 @@
+{
+  "short_name": "Guitar-Effects",
+  "name": "Guitar-Effects Online",
+  "icons": [
+    {
+      "src": "webapp/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "webapp/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "webapp/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "webapp/256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "webapp/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#000000",
+  "display": "standalone",
+  "theme_color": "#515151"
+}
